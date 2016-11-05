@@ -1,0 +1,38 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>News Title</h1>
+  <h3>Title</h3>
+
+  <div>
+    <div>{{data[0]}}</div>
+  </div>
+
+  <h3>Abstract</h3>
+
+  <div>
+    <div>{{data[1]}}</div>
+  </div>
+
+  <h3>Article</h3>
+  <div>
+    <div>{{data[2]}}</div>
+  </div>
+
+<p><a href="/">Return to News List</a></p>
+
+<form method="POST" action="/add">
+<p>Like it? <input type="text" name="name"> <input type="submit" value="Add"></p>
+</form>
+
+</body>
+
+
+</html>

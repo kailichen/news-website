@@ -1,0 +1,29 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>News List</h1>
+  <h3>Title</h3>
+
+  <div>
+    {% for n in data %}
+    <div><p><a href="{{ url_for('content', title=n ) }}">{{n}}</a>></p>></div>
+    {% endfor %}
+  </div>
+
+<p><a href="/profile">My Profile</a></p>
+
+<form method="POST" action="/add">
+<p>Name of new computer scientist: <input type="text" name="name"> <input type="submit" value="Add"></p>
+</form>
+
+</body>
+
+
+</html>
