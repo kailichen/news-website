@@ -9,6 +9,30 @@
 
 <body>
   <h1>My Profile</h1>
+  <h3>Email</h3>
+
+  <div>
+    <div>{{data[0]}}</div>
+  </div>
+
+  <h3>Password</h3>
+
+  <div>
+    <div>{{data[1]}}</div>
+  </div>
+
+  <h3>Username</h3>
+
+  <div>
+    <div>{{data[2]}}</div>
+  </div>
+
+  <h3>History</h3>
+{% for item in data[3:] %}
+  <div>
+  <span onclick=someFunction({{ item|safe }});>{{ item }}</span>
+  </div>
+{% endfor %}
 
 <p><a href="/">Return to News List</a></p>
 
