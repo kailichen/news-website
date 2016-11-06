@@ -5,19 +5,52 @@
       font-family: arial;
     }
   </style>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/hot-sneaks/jquery-ui.css">
+
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src= "//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.29/skrollr.min.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script src="{{url_for('static', filename='custom.js')}}"></script>
+<script src="{{url_for('static', filename='custom.css')}}"></script>
+</head>
 
 
 <body>
-  <h1>News List</h1>
-  <h3>Title</h3>
+  <h1>newsie</h1>
 
-  <div>
-    {% for n in data %}
-    <div><p><a href="{{ url_for('content', title=n ) }}">{{n}}</a>></p>></div>
-    {% endfor %}
-  </div>
+{% block body %}
+<div id="main" class="container">
+    <h2>Latest News</h2>
+    <table class="table table-striped table-hover table-responsive table-condensed">
+      {% for row in data %}
+        <div id="expand_details" data-id="{{row['title']}}">
+        <td>{{row['title']}}</td>
+        <tr><td colspan=3><p>
+            <b>{{row['title']}}</b><br>
+            <i>{{row['abstract']}}</i> <br> <br>
+            <a href = {{row['content']}} target="_blank"> VIEW </a>
+<!--             VIEW BUTTON
+            SHARE BUTTON
+            FAVE BUTTON -->
+        </p></td></tr>
+        </div>
+        <!-- <tr><td colspan="3"><a href="{{ url_for('content', title=n ) }}">{{n}}</a></td></tr> -->
+      {% endfor %}
+
+    </table>
+ 
+ 
+</div>
+{% endblock %}
 
 <p><a href="/profile">My Profile</a></p>
+
+<p><a href="/user_login">LogIn</a></p>
+<p><a href="/user_logout">LogOut</a></p>
 
 <form method="POST" action="/add">
 <p>Name of new computer scientist: <input type="text" name="name"> <input type="submit" value="Add"></p>
