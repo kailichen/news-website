@@ -5,8 +5,13 @@
       font-family: arial;
     }
   </style>
+<head>
+{% include 'source.html' %}
 
+<title> newsie </title>
+</head>
 <body>
+<div id="main" class="container">
 <h1>Register</h1>
 <form method="POST">
   <p>Email</p>{{ form.email }}
@@ -14,6 +19,7 @@
   <p>Username</p>{{ form.username }}
   <input type="submit">
 </form>
+</div>
 </body>
 
 </html>

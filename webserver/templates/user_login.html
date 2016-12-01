@@ -5,14 +5,20 @@
       font-family: arial;
     }
   </style>
+<head>
+{% include 'source.html' %}
 
+<title> newsie </title>
+</head>
   <body>
+<div id="main" class="container" >
 <h1>Login</h1>
 <form method="POST">
   <p>Email</p><input type="email" name="email">
   <p>Password</p><input type="password" name="password">
   <input type="submit">
 </form>
+</div>
   </body>
 
 

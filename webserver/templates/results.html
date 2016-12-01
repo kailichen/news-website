@@ -1,73 +1,16 @@
 <html>
-  <style>
-    body{ 
-      font-size: 15pt;
-      font-family: arial;
-    }
-  </style>
 <head>
 {% include 'source.html' %}
 
 <title> newsie </title>
 </head>
-
-
-<body>
-{% block body %}
+  <body>
 <div id ="main" class="container">
   <h1>newsie</h1>
 </div>
 
-<div id ="main" class="container" align="right">
-<table style="width:30%">
-<tr>
-{% if user[0] %}
-<td><a href="/profile">My Profile</a></td>
-<td><a href="/user_logout">Log Out</a></td>
-{% else %}
-<td><a href="/user_login">Log In</a></td>
-<td><a href="/register">Sign Up</a></td>
-{% endif %}
-</tr>
-</table>
-</div>
-
-
-<div id="main" class="row" align="center">
-<!-- <h4>filter</h4> -->
-<br>
-<form name="Filters" action="{{url_for('filter_result')}}" method="POST">
-    <!-- Remove "multiple" arg to restrict selections to only 1 -->
-    <select name="Subject" class="selectpicker" multiple data-live-search="true" title="Subject">
-        {% for option in subject_options %}
-          <option> {{option}}</option> 
-        {% endfor %}   
-    </select>
-    <select name="Publisher" class="selectpicker" multiple data-live-search="true" title="Publisher">
-        {% for option in publisher_options %}
-          <option> {{option}}</option> 
-        {% endfor %}          
-    </select>
-    <select name="Author" class="selectpicker" multiple data-live-search="true" title="Author">
-        {% for option in author_options %}
-          <option> {{option}}</option> 
-        {% endfor %}          
-    </select>
-    <select name="Political_Stance" class="selectpicker" title="Political Lean ">
-        {% for option in political_options %}
-          <option> {{option}}</option> 
-        {% endfor %}          
-    </select>
-
-
-    <!-- <input class="button1" type="submit" value="Select"></button> -->
-    <button type="submit" class="btn btn-default" value="Select">search</button>
-    <!-- <button type="submit" class="btn btn-default" value="Select">Clear</button> add if the results are populated on the same page--> 
-</form>
-</div>
-
 <div id="main" class="container">
-    <h4>latest news</h4>
+    <h4>search results</h4>
     <table class="table table-striped table-hover table-responsive table-condensed">
       {% for row in data %}
         <div id="expand_details" data-id="{{row['title']}}">
@@ -98,12 +41,8 @@
       {% endfor %}
 
     </table>
- 
- 
-</div>
-{% endblock %}
 
-</body>
+  </body>
 
-
+<p><a href="/">Return to Homepage</a></p>
 </html>

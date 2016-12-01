@@ -5,21 +5,25 @@
       font-family: arial;
     }
   </style>
+<head>
+{% include 'source.html' %}
 
+<title> newsie </title>
+</head>
 
 <body>
-  <h1>My Profile</h1>
+  <h1>Welcome, {{ user[1] }}!</h1>
   <h3>Email</h3>
 
   <div>
     <div>{{data[0]}}</div>
   </div>
-
+<!-- 
   <h3>Password</h3>
 
   <div>
     <div>{{data[1]}}</div>
-  </div>
+  </div> -->
 
   <h3>Username</h3>
 
@@ -27,8 +31,29 @@
     <div>{{data[2]}}</div>
   </div>
 
-  <h3>History</h3>
-{% for item in data[3:] %}
+  <h3>View History</h3>
+{% for item in view %}
+  <div>
+  <span onclick=someFunction({{ item|safe }});>{{ item }}</span>
+  </div>
+{% endfor %}
+
+   <h3>Fave History</h3>
+{% for item in fave %}
+  <div>
+  <span onclick=someFunction({{ item|safe }});>{{ item }}</span>
+  </div>
+{% endfor %}
+
+   <h3>Share History</h3>
+{% for item in share %}
+  <div>
+  <span onclick=someFunction({{ item|safe }});>{{ item }}</span>
+  </div>
+{% endfor %}
+
+   <h3>Top Viewed Subjects</h3>
+{% for item in top_subjects %}
   <div>
   <span onclick=someFunction({{ item|safe }});>{{ item }}</span>
   </div>
@@ -36,9 +61,6 @@
 
 <p><a href="/">Return to News List</a></p>
 
-<form method="POST" action="/add">
-<p>Name of new computer scientist: <input type="text" name="name"> <input type="submit" value="Add"></p>
-</form>
 
 </body>
 
