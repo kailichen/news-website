@@ -1,5 +1,5 @@
 # Newsie Website
 
-## Team Member: Kaili Chen & Lucy Wang
+## Team Members: Kaili Chen & Lucy Wang
 
 Newsie is a one-stop digital newsstand that delivers a customized, multi-media newsfeed to users from a comprehensive network of online publishers. The available news content ranges across types such as written, pictorial, video, short-form, long-form, quiz, ads, and visual interactive. Users get to filter items for specific news subjects and publishers of interest, the latter of which are broken down into categories such as political position. All within the interface of Newsie, the user can view content from different publishers directly. We want to keep track of the news subjects associated with the items that users view, favorite, and share, to help inform future customizations of their news feed. Within the app, the user can also share content to different social platforms like Facebook, Twitter, and Pinterest. The content data on Newsie will be scraped from publisher article links. These links will be extracted from tweets posted by the publishers’ twitter accounts, using the Twitter API. The user-related attribute and relationship data will be made up.
